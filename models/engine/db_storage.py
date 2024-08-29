@@ -70,3 +70,12 @@ class DBStorage:
             if (value.id == id):
                 return value
         return None
+    
+    def get_user_by_username(self, username):
+        """Fetch user from db by username"""
+        return self.__session.query(User).filter_by(username=username).first()
+    
+    def add_user(self, user):
+        """Adding user to db"""
+        self.new(user)
+        self.save()
