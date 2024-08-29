@@ -58,7 +58,7 @@ def signup():
                new_user = User(email=email, username=username, password_hash=password_hash)
 
                #Saving new_user to DBStorage
-               storage.add(new_user)
+               storage.add_user(new_user)
 
                flash('Succefully signed up! Please log in.')
                return redirect(url_for('main.login'))
