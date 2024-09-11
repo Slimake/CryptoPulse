@@ -1,4 +1,4 @@
-from flask import Blueprint, render_template, redirect, url_for, session, request, flash, abort
+from flask import Blueprint, render_template, redirect, url_for, session, request, flash, abort, Flask
 
 import bcrypt
 from models.engine.db_storage import DBStorage
@@ -6,7 +6,7 @@ from models.user import User
 
 #Initializing DBStorage
 storage = DBStorage()
-storage.reload()
+## storage.reload()
 
 app = Flask(__name__)
 app.secret_key = 'PB_Testing'

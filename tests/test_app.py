@@ -1,11 +1,32 @@
 import unittest
-from flask import Flask
+from sqlalchemy import create_engine
+from sqlalchemy.orm import sessionmaker
 from main import app, storage
 import bcrypt
+import models
+
+models.storage_type = "db"
+
+
+from models.base_model import Base
 from models.user import User
+
 
 class FlaskAppTestCase(unittest.TestCase):
     def setUp(self):
+        # Use an in-memory SQLite database for testing
+        self.engine = create_engine('sqlite:///:memory:')
+        Base.metadata.create_all(self.engine)
+
+        # Set up the sessionmaker and bind it to the in-memory engine
+        Session = sessionmaker(bind=self.engine)
+        self.session = Session()
+
+        # Override the storage engine for tests
+        storage._DBStorage__engine = self.engine
+        storage._DBStorage__session = self.session
+
+        # Set up the test client
         self.app = app.test_client()
         self.app.testing = True
 
@@ -16,6 +37,10 @@ class FlaskAppTestCase(unittest.TestCase):
     def tearDown(self):
         # Clean up mock user after each test
         storage.delete_user(self.mock_user)
+
+        # Drop all tables at the end of the test
+        Base.metadata.drop_all(self.engine)
+        self.session.close()
 
     def test_index_redirect(self):
         response = self.app.get('/')
@@ -50,7 +75,7 @@ class FlaskAppTestCase(unittest.TestCase):
             'confirm_password': 'newpassword'
         }, follow_redirects=True)
         self.assertEqual(response.status_code, 200)
-        self.assertIn(b'Succefully signed up! Please log in.', response.data)
+        self.assertIn(b'Successfully signed up! Please log in.', response.data)
 
     def test_signup_post_failure(self):
         response = self.app.post('/signup', data={
