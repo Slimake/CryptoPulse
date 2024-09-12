@@ -12,6 +12,6 @@ class User(BaseModel, Base):
     """Create user table in the database"""
     if models.storage_type == "db":
         __tablename__ = 'users'
-        username = Column(String(45), nullable=False)
+        username = Column(String(45), nullable=False, primary_key=True)
         email = Column(String(45), nullable=False)
         password_hash = Column(String(60), nullable=False)
