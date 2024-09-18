@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="css/signup.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+    
+    <title>Sign Up</title>
+</head>
+
+<body>
+
+    <header>
+        <nav class="navbar">
+            <div class="logo"><img src="Images/cryptopulse.png" class="cryptopulse"> Crypto <span style="color: #fca311;">Pulse</span></div>
+
+            <ul class="nav-links">
+                <li><a href="homepage.html">Home</a></li>
+                <li><a href="market.html">Market</a></li>
+                <li><a href="news.html">News</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+
+            <div class="button">
+                <button class="sign-up">Sign Up</button>
+                 <a href="login.html" class="login"> Log In </a>
+            </div>            
+        </nav>
+    </header>
+    <div class="sign_body">
+        <div class="signup-container">
+            <h2>Sign Up</h2>
+            <form action="/submit_signup" method="POST">
+                <label for="username">Username</label>
+                <input type="text" id="username" name="username" required>
+    
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" required>
+    
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" required>
+    
+                <label for="confirm-password">Confirm Password</label>
+                <input type="password" id="confirm-password" name="confirm-password" required>
+    
+                <input type="submit" value="Sign Up">
+            </form>
+            <p>Already have an account? <a href="/login">Log in here</a></p>
+        </div>
+    </div>
+    
+
+</body>
+</html>
