@@ -21,7 +21,7 @@
                 <li><a href="{{ url_for('app_views_main.news') }}">News</a></li>
                 <li><a href="{{ url_for('app_views_main.prediction') }}">Prediction</a></li>
                 {% endif %}
-                <li><a href="#">About</a></li>
+                <li><a href="{{ url_for('app_views_main.about') }}">About</a></li>
             </ul>
             <div class="dropstart">
                 <a class="btn btn-secondary dropdown-toggle profile" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -40,7 +40,7 @@
         <h1 style="text-align: center; margin: 50px 0 20px;"><strong>Today's Cryptocurrency Prices by Market Cap</strong></h1>
     </div>
 
-    <div class="coin-list">
+    <div class="coin-list" style="height: 1200vh;">
         <table>
             <thead>
                 <tr>
