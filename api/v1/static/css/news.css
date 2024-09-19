@@ -1,0 +1,139 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;500;700&display=swap');
+*{
+    font-family: "Poppins", sans-serif;
+}
+
+/* Reset some default browser styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Roboto", system-ui;
+    color: #333;
+    background-color: #f4f4f4;
+}
+.cryptopulse {
+    width: 30px;
+    padding: 0;
+    margin: 0;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #dad8e4;
+    padding: 0.5rem 1rem;
+}
+
+.selector-for-some-widgetsss {
+    box-sizing: content-box;
+  }
+
+.logo {
+    color: #000000;
+    font-size: 1.5rem;
+    font-weight: bold;
+    display: block;
+    margin-left: none;    
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    font-weight: bolder;
+    margin-bottom: 0;
+    position: -300%;
+}
+
+.nav-links li {
+    margin-left: 2rem;
+}
+
+.nav-links a {
+    color: #000000;
+    text-decoration: none;
+    font-size: 1.2rem;
+}
+
+.nav-links a:hover {
+    color: #fca311;
+}
+
+.nav-links .active {
+    color: #fca311;
+  }
+  
+.prof {
+background-color: #c5baba;
+}
+
+.dropdown-menu {
+background-color: #c5baba;
+}
+
+.prof img {
+width: 30px;
+height: 30px;
+}
+
+.button {
+    display: flex;
+    border: none;    
+}
+
+.sign-up{
+    background-color: rgb(0, 0, 0);
+    color: rgb(250, 242, 242);
+    border: none;
+    padding: 9px 16px;
+    vertical-align: top;
+    border-radius: 6px;
+    cursor: pointer;
+    margin-left: 8px;
+    font-weight: bold;
+    margin-right: 8px;
+
+    transition: background-color 1s,
+    color 1s;
+  }
+
+  
+  .sign-up:active {
+  opacity: 0.7;
+  }
+
+.login {
+    color: #dad8e4;
+    background-color: #fca311;
+    border-radius: 6px;
+    padding: 8px 16px;
+    vertical-align: top;
+    cursor: pointer;
+    font-weight: bold;
+    text-decoration: none;
+    
+  }
+  .login:hover {
+    color: white;
+    opacity: 0.7;
+    text-decoration: none;
+  }
+
+  .log-in:active {
+  opacity: 0.7;
+  }
+
+footer {
+position: relative;
+width: 100%;
+text-align: center;
+background-color: #000000;
+color: #fff;
+padding: 1rem;
+font-family: Arial, Helvetica, sans-serif;
+font-weight: bold;
+}
