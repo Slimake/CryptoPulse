@@ -18,19 +18,19 @@
         <nav class="navbar">
             <div class="logo"><a href="{{ url_for('app_views_main.index') }}"><img src="../static/images/cryptopulse.png" class="cryptopulse"> <span style="color:#000000">Crypto </span><span style="color: #fca311;">Pulse</span></a></div>
 
-            <ul class="nav-links" style="margin-bottom: 0;">
+            <ul class="nav-links">
                 {% if current_user.is_authenticated %}
                 <li><a href="{{ url_for('app_views_main.index') }}" onclick="return false" class="active">Home</a></li>
                 <li><a href="{{ url_for('app_views_main.market') }}">Market</a></li>
                 <li><a href="{{ url_for('app_views_main.news') }}">News</a></li>
                 <li><a href="{{ url_for('app_views_main.prediction') }}">Prediction</a></li>
                 {% endif %}
-                <li><a href="#">About</a></li>
+                <li><a href="{{ url_for('app_views_main.about') }}">About</a></li>
             </ul>
 
             <div class="button">
                 {% if not current_user.is_authenticated %}
-                <button class="sign-up">
+                <button">
                     <a href="{{ url_for('app_views_auth.signup') }}" class="sign-up">Sign Up</a>
                 </button>
                 <a href="{{ url_for('app_views_auth.login') }}" class="login"> Log In </a>
