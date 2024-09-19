@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up</title>
+    <link rel="stylesheet" href="../static/css/style.css?{{ cache_id}}">
+    <style>
+        .signup-container {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 400px;
+            margin: 10px auto;
+        }
+        .signup-container h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .signup-container label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        .signup-container input[type="text"],
+        .signup-container input[type="email"],
+        .signup-container input[type="password"] {
+            width: 100%;
+            box-sizing: border-box;
+            padding: 10px 15px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        .signup-container input[type="submit"] {
+            width: 100%;
+            padding: 10px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+        .signup-container input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+        .signup-container p {
+            text-align: center;
+            margin-top: 20px;
+        }
+        .flash-message {
+            list-style: none;
+            text-align: center;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid;
+            border-radius: 5px;
+            max-width: 400px;
+        }
+        .success {
+            color: green;
+            border-color: green;
+            background-color: #d4edda;
+        }
+        .error {
+            color: red;
+            border-color: red;
+            background-color: #f8d7da;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="logo"><a href="{{ url_for('app_views_main.index') }}"><img src="../static/images/cryptopulse.png" class="cryptopulse"> <span style="color:#000000">Crypto </span><span style="color: #fca311;">Pulse</span></a></div>
+            <ul class="nav-links">
+                <li><a href="{{ url_for('app_views_main.index') }}">Home</a></li>
+                {% if current_user.is_authenticated %}
+                <li><a href="{{ url_for('app_views_main.market') }}">Market</a></li>
+                <li><a href="{{ url_for('app_views_main.news') }}">News</a></li>
+                <li><a href="{{ url_for('app_views_main.prediction') }}">Prediction</a></li>
+                {% endif %}
+                <li><a href="#">About</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="signup-container">
+        <h2>Sign Up</h2>
+        <!-- Display flash messages -->
+        {% with messages = get_flashed_messages(with_categories=True) %}
+            {% if messages %}
+                <ul class="error">
+                    {% for category, message in messages %}
+                        <li class="flash-message {{ category }}">{{ message }}</li>
+                    {% endfor %}
+                </ul>
+            {% endif %}
+        {% endwith %}
+        <form action="/signup" method="POST">
+            <label for="username">Username</label>
+            <input type="text" id="username" name="username" placeholder="username" required>
+
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" placeholder="email" required>
+
+            <label for="password">Password</label>
+            <input type="password" id="password" name="password" placeholder="password" required>
+
+            <label for="confirm-password">Confirm Password</label>
+            <input type="password" id="confirm-password" name="confirm_password" placeholder="confirm password" required>
+
+            <input type="submit" id="submit" value="Sign Up">
+        </form>
+        <p>Already have an account? <a href="{{ url_for('app_views_auth.login') }}">Log in here</a></p>
+    </div>
+    <footer>
+        &copy; 2024 CryptoPulse. All rights reserved.
+    </footer>
+</body>
+</html>
