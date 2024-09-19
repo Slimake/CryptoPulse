@@ -33,3 +33,9 @@ def prediction():
     """Prediction"""
     cache_id = uuid4() # generate random uuid
     return render_template('prediction.html', cache_id=cache_id)
+
+@app_views_main.route('/about')
+def about():
+    """About"""
+    cache_id = uuid4() # generate random uuid
+    return render_template('about.html', cache_id=cache_id)
