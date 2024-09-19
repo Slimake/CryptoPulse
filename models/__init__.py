@@ -5,7 +5,7 @@ initialize the models package
 from os import getenv
 
 
-storage_type = getenv("DB")
+storage_type = getenv("STORAGE_TYPE")
 
 if storage_type == "db":
     from models.engine.db_storage import DBStorage
