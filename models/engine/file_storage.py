@@ -67,14 +67,26 @@ class FileStorage:
         """Call reload() method for deserializing the JSON file to objects"""
         self.reload
 
-    def get(self, cls, id):
-        """Returns the object based on the class name and its ID
+    def get_username(self, cls, username):
+        """Returns the object based on the class name and its username
         or None if not found"""
         if cls not in classes.values():
             return None
 
         all_cls = self.all(cls)
         for value in all_cls.values():
-            if (value.id == id):
+            if (value.username == username):
+                return value
+        return None
+
+    def get_email(self, cls, email):
+        """Returns the object based on the class name and its username
+        or None if not found"""
+        if cls not in classes.values():
+            return None
+
+        all_cls = self.all(cls)
+        for value in all_cls.values():
+            if (value.email == email):
                 return value
         return None
