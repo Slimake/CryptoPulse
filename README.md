@@ -1,5 +1,5 @@
 
-![Logo](templates/images/cryptopulse.png)
+![Logo](api/v1/static/images/cryptopulse.png)
 
 
 # Cryptopulse
