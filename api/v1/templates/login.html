@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../static/css/login.css?{{ cache_id}}">
+    <title>Login</title>
+    <style>
+       
+    </style>
+</head>
+<body>
+
+    <header>
+        <nav class="navbar">
+            <div class="logo"><a href="{{ url_for('app_views_main.index') }}"><img src="../static/images/cryptopulse.png" class="cryptopulse" style="width: 30px;"> <span style="color:#000000">Crypto </span><span style="color: #fca311;">Pulse</span></a></div>
+
+            <ul class="nav-links">
+                <li><a href="{{ url_for('app_views_main.index') }}">Home</a></li>
+                {% if current_user.is_authenticated %}
+                <li><a href="{{ url_for('app_views_main.market') }}">Market</a></li>
+                <li><a href="{{ url_for('app_views_main.news') }}">News</a></li>
+                <li><a href="{{ url_for('app_views_main.prediction') }}">Prediction</a></li>
+                {% endif %}
+                <li><a href="{{ url_for('app_views_main.about') }}">About</a></li>
+            </ul>         
+        </nav>
+    </header>
+
+    <div class="login-container">
+        <h2>Login</h2>
+        <!-- Display flash messages -->
+        {% with messages = get_flashed_messages(with_categories=True) %}
+            {% if messages %}
+                <ul class="error">
+                    {% for category, message in messages %}
+                        <li class="flash-message {{ category }}">{{ message }}</li>
+                    {% endfor %}
+                </ul>
+            {% endif %}
+        {% endwith %}
+        <form action="/login" method="POST">
+            <label for="username">Username</label>
+            <input type="text" id="username" name="username" placeholder="username" required>
+
+            <label for="password">Password</label>
+            <input type="password" id="password" name="password" placeholder="password" required>
+
+            <label class="checkbox">
+                <input type="checkbox" name="remember">
+                <span style="font-weight: 400;">Remember me</span>
+            </label>
+
+            <input type="submit" id="submit" value="Login">
+        </form>
+        <p>Don't have an account? <a href="{{ url_for('app_views_auth.signup') }}">Sign up here</a></p>
+    </div>
+
+    <footer>
+        &copy; 2024 CryptoPulse. All rights reserved.
+    </footer>
+</body>
+</html>
