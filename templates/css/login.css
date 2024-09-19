@@ -1,0 +1,137 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;500;700&display=swap');
+*{
+    font-family: "Poppins", sans-serif;
+}
+
+/* Reset some default browser styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Roboto", system-ui;
+    color: #333;
+    background-color: #f4f4f4;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    /* height: 100vh; */
+}
+.cryptopulse {
+    width: 50px;
+    padding: 0;
+    margin: 0;
+    display: inline-block;
+    text-align: center;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #dad8e4;
+    padding: .5rem 1rem;
+}
+
+.navbar a, .navbar a:hover {
+    text-decoration: none;
+}
+
+.selector-for-some-widgetsss {
+    box-sizing: content-box;
+  }
+
+.logo {
+    color: #000000;
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-left: none;
+    img {
+        vertical-align: middle;
+        border-style: none;
+    }
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    justify-content: flex-end;
+    font-size: bolder;
+
+    
+}
+
+.nav-links li {
+    margin-left: 2rem;
+    
+}
+
+.nav-links a {
+    color: #000000;
+    text-decoration: none;
+    font-size: 1rem;
+}
+
+.nav-links a:hover {
+    color: #fca311;
+}
+
+.login-container {
+    margin: 80px auto;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 10PX 10px rgba(201, 10, 10, 0.1);
+    width: 400px;
+    border-color: #000000;
+    border: 20PX;
+}
+
+.login-container h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+.login-container label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+.login-container input[type="text"],
+.login-container input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+.login-container input[type="submit"] {
+    width: 100%;
+    padding: 10px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+}
+.login-container input[type="submit"]:hover {
+    background-color: #45a049;
+}
+.login-container p {
+    text-align: center;
+    margin-top: 20px;
+}
+
+footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    background-color: #000000;
+    color: #fff;
+    padding: 1rem;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+}

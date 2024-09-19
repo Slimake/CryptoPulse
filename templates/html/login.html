@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/login.css">
+    <title>Login</title>
+    <style>
+       
+    </style>
+</head>
+<body>
+
+    <header>
+        <nav class="navbar">
+            <div class="logo"><a href="../html/homepage.html"><img src="../images/cryptopulse.png" class="cryptopulse" style="width: 30px;"> <span style="color:#000000">Crypto </span><span style="color: #fca311;">Pulse</span></a></div>
+
+            <ul class="nav-links">
+                <li><a href="../html/homepage.html">Home</a></li>
+                <li><a href="#">Market</a></li>
+                <li><a href="#">News</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>         
+        </nav>
+    </header>
+
+    <div class="login-container">
+        
+        <h2>Login</h2>
+        <form action="/submit_login" method="POST">
+            <label for="username">Username</label>
+            <input type="text" id="username" name="username" required>
+
+            <label for="password">Password</label>
+            <input type="password" id="password" name="password" required>
+
+            <input type="submit" value="Login">
+        </form>
+        <p>Don't have an account? <a href="../signup.html">Sign up here</a></p>
+    </div>
+
+    <footer>
+        &copy; 2024 CryptoPulse. All rights reserved.
+    </footer>
+</body>
+</html>

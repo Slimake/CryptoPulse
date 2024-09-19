@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <!-- <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" /> -->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;500;700&family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+    
+    <title>Crypto Pulse</title>
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="logo"><a href="../html/homepage.html"><img src="../images/cryptopulse.png" class="cryptopulse"> <span style="color:#000000">Crypto </span><span style="color: #fca311;">Pulse</span></a></div>
+
+            <ul class="nav-links" style="margin-bottom: 0;">
+                <li><a href="#">Market</a></li>
+                <li><a href="#">News</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+
+            <div class="button">
+                <button class="sign-up">
+                    <a href="../signup.html" class="sign-up">Sign Up</a>
+                </button>
+                <a href="../html/login.html" class="login"> Log In </a>
+            </div>            
+        </nav>
+    </header>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Stay Ahead in the Crypto World</h1>
+            <p>Get the latest updates and insights on your favorite cryptocurrencies.</p>
+            <button class="cta-btn" onclick="subscribe()">Subscribe Now</button>
+        </div>
+    </section>
+
+    <section class="crypto-info">
+        <div class="crypto-card">
+            <h2>Bitcoin</h2>
+            <p>Current Price: $<span id="btc-price"></span></p>
+        </div>
+        <div class="crypto-card">
+            <h2>Ethereum</h2>
+            <p>Current Price: $<span id="eth-price"></span></p>
+        </div>
+        <div class="crypto-card">
+            <h2>Litecoin</h2>
+            <p>Current Price: $<span id="ltc-price"></span></p>
+        </div>
+    </section>
+
+    <div class="mrk-look">
+        <h1 style="text-align: center;"><strong>Today's Top 20 Cryptocurrency Prices by Market Cap</strong></h1>
+        <!-- <p>24h Volume</p>
+        <p>24h Change</p>
+        <p>Price</p>
+        <p>Category</p>
+        <p >Exchange</p>
+        <button class="srch">search</button>
+        <button class="rset">Reset</button> -->
+    </div>
+
+    <div class="coin-list">
+        <table>
+            <thead>
+                <tr>
+                    <th style="text-align: center;">#</th>
+                    <th>coin</th>
+                    <th style="text-align: right;">Price</th>
+                    <th style="text-align: right;">Volume(24Hr)</th>
+                    <th style="text-align: right;">Circulatory Supply</th>
+                    <th style="text-align: right;">Market Cap</th>
+                </tr>
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
+    </div>
+
+    <footer>
+        &copy; 2024 CryptoPulse. All rights reserved.
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script src="../js/script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</body>
+</html>

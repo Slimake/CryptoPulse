@@ -4,22 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sign Up</title>
+    <link rel="stylesheet" href="../templates/css/style.css">
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            margin: 0;
-        }
         .signup-container {
             background-color: #fff;
             padding: 20px;
             border-radius: 8px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            width: 300px;
+            width: 400px;
+            margin: 10px auto;
         }
         .signup-container h2 {
             text-align: center;
@@ -34,7 +27,8 @@
         .signup-container input[type="email"],
         .signup-container input[type="password"] {
             width: 100%;
-            padding: 10px;
+            box-sizing: border-box;
+            padding: 10px 15px;
             margin-bottom: 15px;
             border: 1px solid #ccc;
             border-radius: 4px;
@@ -59,27 +53,40 @@
     </style>
 </head>
 <body>
+    <header>
+        <nav class="navbar">
+            <div class="logo"><a href="../templates/html/homepage.html"><img src="../templates/images/cryptopulse.png" class="cryptopulse"> <span style="color:#000000">Crypto </span><span style="color: #fca311;">Pulse</span></a></div>
+            <ul class="nav-links">
+                <li><a href="../templates/html/homepage.html">Home</a></li>
+                <li><a href="#">Market</a></li>
+                <li><a href="#">News</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
 
-<div class="signup-container">
-    <h2>Sign Up</h2>
-    <form action="/submit_signup" method="POST">
-        <label for="username">Username</label>
-        <input type="text" id="username" name="username" required>
+    <div class="signup-container">
+        <h2>Sign Up</h2>
+        <form action="/submit_signup" method="POST">
+            <label for="username">Username</label>
+            <input type="text" id="username" name="username" required>
 
-        <label for="email">Email</label>
-        <input type="email" id="email" name="email" required>
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" required>
 
-        <label for="password">Password</label>
-        <input type="password" id="password" name="password" required>
+            <label for="password">Password</label>
+            <input type="password" id="password" name="password" required>
 
-        <label for="confirm-password">Confirm Password</label>
-        <input type="password" id="confirm-password" name="confirm-password" required>
+            <label for="confirm-password">Confirm Password</label>
+            <input type="password" id="confirm-password" name="confirm-password" required>
 
-        <input type="submit" value="Sign Up">
-    </form>
-    <p>Already have an account? <a href="/login">Log in here</a></p>
-</div>
-
+            <input type="submit" value="Sign Up">
+        </form>
+        <p>Already have an account? <a href="../templates/html/login.html">Log in here</a></p>
+    </div>
+    <footer>
+        &copy; 2024 CryptoPulse. All rights reserved.
+    </footer>
 </body>
 </html>
-
