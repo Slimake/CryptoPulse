@@ -19,10 +19,10 @@ class DBStorage:
 
     def __init__(self):
         """Instantiate a DBStorage object"""
-        USER = getenv('USER')
-        PWD = getenv('PWD')
-        HOST = getenv('HOST')
-        DB = getenv('DB')
+        USER = getenv('MYSQL_USER')
+        PWD = getenv('MYSQL_PWD')
+        HOST = getenv('MYSQL_HOST')
+        DB = getenv('MYSQL_DB')
         # ENV = getenv('ENV')
 
         self.__engine = create_engine('mysql+mysqldb://{}:{}@{}/{}'.
@@ -43,7 +43,7 @@ class DBStorage:
         """Add the object to the current database session"""
         self.__session.add(obj)
 
-    def save(self, obj):
+    def save(self):
         """Commit all changes to the database"""
         self.__session.commit()
 
@@ -59,7 +59,35 @@ class DBStorage:
         Session = scoped_session(sess_factory)
         self.__session = Session
 
-    def get(self, cls, id):
+    def close(self):
+        """Commit all changes to the database"""
+        self.__session.remove()
+
+    def get_username(self, cls, username):
+        """Returns the object based on the class name and its ID
+        or None if not found"""
+        if cls not in classes.values():
+            return None
+
+        all_cls = self.all(cls)
+        for value in all_cls.values():
+            if (value.username == username):
+                return value
+        return None
+    
+    def get_email(self, cls, email):
+        """Returns the object based on the class name and its ID
+        or None if not found"""
+        if cls not in classes.values():
+            return None
+
+        all_cls = self.all(cls)
+        for value in all_cls.values():
+            if (value.email == email):
+                return value
+        return None
+    
+    def get_id(self, cls, id):
         """Returns the object based on the class name and its ID
         or None if not found"""
         if cls not in classes.values():
@@ -70,12 +98,3 @@ class DBStorage:
             if (value.id == id):
                 return value
         return None
-    
-    def get_user_by_username(self, username):
-        """Fetch user from db by username"""
-        return self.__session.query(User).filter_by(username=username).first()
-    
-    def add_user(self, user):
-        """Adding user to db"""
-        self.new(user)
-        self.save()
