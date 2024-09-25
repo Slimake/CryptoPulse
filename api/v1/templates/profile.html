@@ -52,6 +52,7 @@
             border: 1px solid;
             border-radius: 5px;
             max-width: 400px;
+            margin: 0 auto;
         }
         .success {
             color: green;
@@ -69,7 +70,7 @@
 
     <header>
         <nav class="navbar">
-            <div class="logo"><a href="{{ url_for('app_views_main.index') }}"><img src="../static/images/cryptopulse.png" class="cryptopulse" style="width: 30px;"> <span style="color:#000000">Crypto </span><span style="color: #fca311;">Pulse</span></a></div>
+            <div class="logo"><a href="{{ url_for('app_views_main.index') }}"><img src="../static/images/cryptopulse.png" class="cryptopulse" style="width: 30px;"> <span style="color:#000000">Crypto</span><span style="color: #fca311;">Pulse</span></a></div>
 
             <ul class="nav-links">
                 <li><a href="{{ url_for('app_views_main.index') }}">Home</a></li>
@@ -95,7 +96,7 @@
     <div class="container px-4 py-5" id="featured-3">
         {% with messages = get_flashed_messages(with_categories=True) %}
             {% if messages %}
-                <ul class="error">
+                <ul>
                     {% for category, message in messages %}
                         <li class="flash-message {{ category }}">{{ message }}</li>
                     {% endfor %}
