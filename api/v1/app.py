@@ -4,18 +4,15 @@ from models import storage
 from models.user import User
 from api.v1.views import app_views_auth
 from api.v1.views import app_views_main
-from os import environ
-from flask import Flask, render_template, jsonify, make_response, redirect, url_for, session, request, flash, abort
+from flask import Flask, render_template
 from flask_login import LoginManager
-#from flask_cors import CORS
 from api.v1.views import *
 import os
 
 app = Flask(__name__)
 app.register_blueprint(app_views_auth)
 app.register_blueprint(app_views_main)
-app.secret_key = os.urandom(24) # Generates a 24-byte random key
-#cors = CORS(app, resources={r"/api/v1/*": {"origins": "*"}})
+app.secret_key = os.getenv('SECRET_KEY')
 
 login_manager = LoginManager()
 login_manager.login_view = 'app_views_auth.login'
