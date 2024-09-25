@@ -136,6 +136,7 @@ body {
 
 .hero {
     background-color: #030303;
+    background: linear-gradient(to top, rgba(0,0,0,0.5)50%, rgba(5, 5, 5, 0.5)50%), url(../images/goldnbla.jpg);
     color: #fff;
     text-align: center;
     padding: 3rem 1rem;

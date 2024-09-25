@@ -16,11 +16,11 @@
 <body>
     <header>
         <nav class="navbar">
-            <div class="logo"><a href="{{ url_for('app_views_main.index') }}"><img src="../static/images/cryptopulse.png" class="cryptopulse"> <span style="color:#000000">Crypto </span><span style="color: #fca311;">Pulse</span></a></div>
+            <div class="logo"><a href="{{ url_for('app_views_main.index') }}"><img src="../static/images/cryptopulse.png" class="cryptopulse"> <span style="color:#000000">Crypto</span><span style="color: #fca311;">Pulse</span></a></div>
 
             <ul class="nav-links">
-                {% if current_user.is_authenticated %}
                 <li><a href="{{ url_for('app_views_main.index') }}" onclick="return false" class="active">Home</a></li>
+                {% if current_user.is_authenticated %}
                 <li><a href="{{ url_for('app_views_main.market') }}">Market</a></li>
                 <li><a href="{{ url_for('app_views_main.news') }}">News</a></li>
                 <li><a href="{{ url_for('app_views_main.prediction') }}">Prediction</a></li>
@@ -30,9 +30,7 @@
 
             <div class="button">
                 {% if not current_user.is_authenticated %}
-                <button">
-                    <a href="{{ url_for('app_views_auth.signup') }}" class="sign-up">Sign Up</a>
-                </button>
+                <a href="{{ url_for('app_views_auth.signup') }}" class="sign-up">Sign Up</a>
                 <a href="{{ url_for('app_views_auth.login') }}" class="login"> Log In </a>
                 {% endif %}
                 {% if current_user.is_authenticated %}
@@ -90,7 +88,7 @@
             <thead>
                 <tr>
                     <th style="text-align: center;">#</th>
-                    <th>coin</th>
+                    <th class="textLeft">coin</th>
                     <th style="text-align: right;">Price</th>
                     <th style="text-align: right;">Volume(24Hr)</th>
                     <th style="text-align: right;">Circulatory Supply</th>
@@ -131,7 +129,7 @@
                 <div class="feature-icon d-inline-flex align-items-center justify-content-center text-bg-primary bg-gradient fs-2 mb-3">
                 <svg class="bi" width="1em" height="1em" style="background-color: #fca311;"><use xlink:href="#toggles2"></use></svg>
                 </div>
-                <h3 class="fs-2 text-body-emphasis">Prediction</h3>
+                <h3 class="fs-2 text-body-emphasis">Forecast</h3>
                 <p>CryptoPulse allows users to make their own forecasts on the future prices of various cryptocurrencies with other users.</p>
                 <a href="{{ url_for('app_views_main.prediction') }}" class="icon-link">
                 Prediction

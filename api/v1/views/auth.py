@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 from api.v1.views import app_views_auth
 from models.user import User
-from flask import render_template, redirect, url_for, session, request, flash
+from flask import render_template, redirect, url_for, request, flash
 from flask_login import login_user, logout_user, current_user, login_required
 import bcrypt
 from models.user import User
@@ -81,22 +81,22 @@ def profile():
         # Validation check
         if user_email.email != email and new_email_check is not None:
             flash('Email already exists, Choose another email', 'error')
-            return redirect(url_for('app_views_main.profile'))
+            return redirect(url_for('app_views_auth.profile'))
         elif user_email.email != email and new_email_check is None:
             user.email = email
     
         if old_password and new_password:
             if old_password == new_password:
                 flash('New Password cannot be same as Old Password!', 'error')
-                return redirect(url_for('app_views_main.profile'))
+                return redirect(url_for('app_views_auth.profile'))
             elif not bcrypt.checkpw(old_password.encode('utf-8'), user.password_hash.encode('utf-8')):
                     flash('Old password is incorrect', 'error')
-                    return redirect(url_for('app_views_main.profile'))
+                    return redirect(url_for('app_views_auth.profile'))
 
             password_hash = bcrypt.hashpw(new_password.encode('utf-8'), bcrypt.gensalt()).decode('utf-8')
             user.password_hash = password_hash
         new_user = User(**user.to_dict())
-        print(email, user_email.email)
+
         if user_email.email == email:
             #Saving new_user to DBStorage
             new_user.save()

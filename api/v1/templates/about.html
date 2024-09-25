@@ -11,13 +11,13 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet">
-    
+
     <title>Crypto Pulse</title>
 </head>
 <body>
     <header>
         <nav class="navbar">
-            <div class="logo"><img src="../static/images/cryptopulse.png" class="cryptopulse"> Crypto <span style="color: #fca311;">Pulse</span></div>
+            <div class="logo"><a href="{{ url_for('app_views_main.index') }}"><img src="../static/images/cryptopulse.png" class="cryptopulse"> <span style="color:#000000">Crypto</span><span style="color: #fca311;">Pulse</span></a></div>
 
             <ul class="nav-links">
                 <li><a href="{{ url_for('app_views_main.index') }}">Home</a></li>
@@ -30,9 +30,7 @@
             </ul>
             <div class="button">
                 {% if not current_user.is_authenticated %}
-                <button class="sign-up">
-                    <a href="{{ url_for('app_views_auth.signup') }}" class="sign-up">Sign Up</a>
-                </button>
+                <a href="{{ url_for('app_views_auth.signup') }}" class="sign-up">Sign Up</a>
                 <a href="{{ url_for('app_views_auth.login') }}" class="login"> Log In </a>
                 {% endif %}
                 {% if current_user.is_authenticated %}
@@ -77,29 +75,29 @@
                     <div class="meet"> 
                         <h1 class="d_team">Meet the TEAM</h1>
                         <div class="profile">
-                            <h2>Thato Mashigo [Back-end]</h2>
+                            <h2>Thato Mashigo <br> [Backend]</h2>
                             <p>LinkedIn
-                                <i class="fa-brands fa-linkedin"></i>: <a href="">https://www.linkedin.com/in/thato-m-985b33119/</a> <br>
-                                GitHub: <a href="">https://github.com/Polarthebear</a> <br>
-                                Twitter: <a href="">https://x.com/Polarthebear</a>
+                                <i class="fa-brands fa-linkedin"></i>: <a href="https://www.linkedin.com/in/thato-m-985b33119/">thato-m</a> <br>
+                                GitHub: <a href="https://github.com/Polarthebear">Thato Mashigo</a> <br>
+                                Twitter: <a href="https://x.com/ThatoMashigo19">Thato Mashigo</a>
                             </p>
                         </div>
 
                         <div class="profile">
-                            <h2 >Ajakaiye Sunday [Database / Devops]</h2>
+                            <h2>Ajakaiye Sunday <br> [Fullstack / SRE]</h2>
                             <p>LinkedIn
                                 <i class="fa-brands fa-linkedin"></i>: <a href="https://www.linkedin.com/in/afeso-ajakaiye-82233073">afeso-ajakaiye</a> <br>
                                 GitHub: <a href="https://github.com/Slimake/">Slimake</a> <br>
-                                Twitter: <a href="">https://x.com/Slimake</a>
+                                Twitter: <a href="https://x.com/Slimake">Slimake</a>
                             </p>
                         </div>
 
                         <div class="profile">
-                            <h2>Olabanji Enioluwayan [Front-end]</h2>
+                            <h2>Olabanji Enioluwayan <br> [Frontend]</h2>
                             <p>LinkedIn
-                                <i class="fa-brands fa-linkedin"></i>: <a href="">https://www.linkedin.com/in/olabanji-eniolu-b21013206</a> <br>
-                                GitHub: <a href="">https://github.com/Enioluwayan7</a> <br>
-                                Twitter: <a href="">https://x.com/Enioluwayan7</a>
+                                <i class="fa-brands fa-linkedin"></i>: <a href="https://www.linkedin.com/in/olabanji-eniolu-b21013206">olabanji-eniolu</a> <br>
+                                GitHub: <a href="https://github.com/Enioluwayan7">Enioluwayan7</a> <br>
+                                Twitter: <a href="https://x.com/henny_blak">Enioluwayan7</a>
                             </p>
                         </div>
                     </div>

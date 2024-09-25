@@ -41,6 +41,10 @@ body {
     margin-left: none;
 }
 
+.navbar a, .navbar a:hover {
+    text-decoration: none;
+}
+
 .nav-links {
     list-style: none;
     display: flex;
