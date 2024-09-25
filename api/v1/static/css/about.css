@@ -43,6 +43,10 @@ body {
     cursor: pointer;
 }
 
+.navbar a, .navbar a:hover {
+  text-decoration: none;
+}
+
 .nav-links {
     list-style: none;
     display: flex;
@@ -88,21 +92,19 @@ body {
     border: none;    
 }
 
-.sign-up{
-    background-color: rgb(0, 0, 0);
-    color: rgb(250, 242, 242);
-    border: none;
-    padding: 9px 16px;
-    vertical-align: top;
-    border-radius: 6px;
-    cursor: pointer;
-    margin-left: 8px;
-    font-weight: bold;
-    margin-right: 8px;
-    text-decoration: none;
-    transition: 0.3s ease;
-  }
-
+.sign-up {
+  background-color: rgb(0, 0, 0);
+  color: rgb(250, 242, 242);
+  border: none;
+  padding: 9px 16px;
+  vertical-align: top;
+  border-radius: 6px;
+  cursor: pointer;
+  margin-left: 8px;
+  font-weight: bold;
+  margin-right: 8px;
+  transition: background-color 1s;
+}
   
   .sign-up:hover {
     color: #dad8e4;
