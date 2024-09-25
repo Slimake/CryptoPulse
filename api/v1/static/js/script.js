@@ -48,28 +48,28 @@ function updateData() {
 
                 // Check if the row for this coin already exists
                 let tr = $(`tr[data-symbol="${symbol}"]`);
-                const iconUrls = [
-                    "https://assets.coincap.io/assets/icons/btc@2x.png",
-                    "https://assets.coincap.io/assets/icons/eth@2x.png",
-                    "https://assets.coincap.io/assets/icons/usdt@2x.png",
-                    "https://assets.coincap.io/assets/icons/bnb@2x.png",
-                    "https://assets.coincap.io/assets/icons/sol@2x.png",
-                    "https://assets.coincap.io/assets/icons/usdc@2x.png",
-                    "https://assets.coincap.io/assets/icons/xrp@2x.png",
-                    "https://assets.coincap.io/assets/icons/steth@2x.png",
-                    "https://assets.coincap.io/assets/icons/doge@2x.png",
-                    "https://assets.coincap.io/assets/icons/trx@2x.png",
-                    "https://assets.coincap.io/assets/icons/ada@2x.png",
-                    "https://assets.coincap.io/assets/icons/avax@2x.png",
-                    "https://assets.coincap.io/assets/icons/wbtc@2x.png",
-                    "https://assets.coincap.io/assets/icons/shib@2x.png",
-                    "https://assets.coincap.io/assets/icons/bch@2x.png",
-                    "https://assets.coincap.io/assets/icons/link@2x.png",
-                    "https://assets.coincap.io/assets/icons/dot@2x.png",
-                    "https://assets.coincap.io/assets/icons/dai@2x.png",
-                    "https://assets.coincap.io/assets/icons/leo@2x.png",
-                    "https://assets.coincap.io/assets/icons/ltc@2x.png"
-                  ];
+                const iconUrls = {
+                    "BTC": "https://assets.coincap.io/assets/icons/btc@2x.png",
+                    "ETH": "https://assets.coincap.io/assets/icons/eth@2x.png",
+                    "USDT": "https://assets.coincap.io/assets/icons/usdt@2x.png",
+                    "BNB": "https://assets.coincap.io/assets/icons/bnb@2x.png",
+                    "SOL": "https://assets.coincap.io/assets/icons/sol@2x.png",
+                    "USDC": "https://assets.coincap.io/assets/icons/usdc@2x.png",
+                    "XRP": "https://assets.coincap.io/assets/icons/xrp@2x.png",
+                    "STETH": "https://assets.coincap.io/assets/icons/steth@2x.png",
+                    "DOGE": "https://assets.coincap.io/assets/icons/doge@2x.png",
+                    "TRX": "https://assets.coincap.io/assets/icons/trx@2x.png",
+                    "ADA": "https://assets.coincap.io/assets/icons/ada@2x.png",
+                    "AVAX": "https://assets.coincap.io/assets/icons/avax@2x.png",
+                    "WBTC": "https://assets.coincap.io/assets/icons/wbtc@2x.png",
+                    "SHIB": "https://assets.coincap.io/assets/icons/shib@2x.png",
+                    "BCH": "https://assets.coincap.io/assets/icons/bch@2x.png",
+                    "LINK": "https://assets.coincap.io/assets/icons/link@2x.png",
+                    "DOT": "https://assets.coincap.io/assets/icons/dot@2x.png",
+                    "DAI": "https://assets.coincap.io/assets/icons/dai@2x.png",
+                    "LEO": "https://assets.coincap.io/assets/icons/leo@2x.png",
+                    "LTC": "https://assets.coincap.io/assets/icons/ltc@2x.png"
+                };
                   
                 if (tr.length === 0) {
                     // If the row doesn't exist, create it
@@ -79,7 +79,7 @@ function updateData() {
                     // Create cells for the row
                     tr.append(`<td class="textCenter">${coinData.rank}</td>`);
                     tr.append(`<td class="textLeft">
-                        <img src="${iconUrls[i]}" alt=""> 
+                        <img src="${iconUrls[coinData.symbol]}" alt="">
                         ${coinData.name} <span style="color:gray">${coinData.symbol}</span>
                     </td>`);
                     tr.append(`<td class="price">$${Number(coinData.priceUsd).toLocaleString(undefined, {minimumFractionDigits:2, maximumFractionDigits:2})}</td>`);
