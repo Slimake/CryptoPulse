@@ -19,7 +19,7 @@
 The web application can be run on any web browser
 
 ```bash
-  <Insert Link Here>
+http://www.cryptopulse.sundayafeso.tech/
 ```
     
 ## Contributing
@@ -33,6 +33,4 @@ Please adhere to this project's `code of conduct`.
 
 ## Screenshots
 
-![App Screenshot](https://via.placeholder.com/468x300?text=App+Screenshot+Here)
-
-<Insert Screenshot here>
+![App Screenshot](api/v1/static/images/app_screenshot.png)
