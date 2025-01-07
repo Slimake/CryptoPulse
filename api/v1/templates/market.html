@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link rel="stylesheet" href="../static/css/style.css?{{ cache_id}}">
-    <title>Login</title>
+    <title>Market</title>
     <style>
     </style>
 </head>
@@ -16,11 +16,11 @@
 
             <ul class="nav-links">
                 <li><a href="{{ url_for('app_views_main.index') }}">Home</a></li>
-                {% if current_user.is_authenticated %}
+                <!-- {% if current_user.is_authenticated %} -->
                 <li><a href="{{ url_for('app_views_main.market') }}" onclick="return false" class="active">Market</a></li>
                 <li><a href="{{ url_for('app_views_main.news') }}">News</a></li>
                 <li><a href="{{ url_for('app_views_main.prediction') }}">Prediction</a></li>
-                {% endif %}
+                <!-- {% endif %} -->
                 <li><a href="{{ url_for('app_views_main.about') }}">About</a></li>
             </ul>
             <div class="dropstart">
@@ -57,28 +57,36 @@
         </table>
     </div>
 
-    <!-- TradingView Widget BEGIN -->
-<div class="tradingview-widget-container" style="height:100%;width:100%">
-  <div class="tradingview-widget-container__widget" style="height:calc(100% - 32px);width:100%"></div>
-  <div class="tradingview-widget-copyright"><a href="https://www.tradingview.com/" rel="noopener nofollow" target="_blank"><span class="blue-text">Track all markets on TradingView</span></a></div>
-  <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-advanced-chart.js" async>
-  {
-  "autosize": true,
-  "symbol": "NASDAQ:AAPL",
-  "interval": "D",
-  "timezone": "Etc/UTC",
-  "theme": "dark",
-  "style": "1",
-  "locale": "en",
-  "withdateranges": true,
-  "hide_side_toolbar": false,
-  "allow_symbol_change": true,
-  "calendar": false,
-  "support_host": "https://www.tradingview.com"
-}
-  </script>
-</div>
-<!-- TradingView Widget END -->
+        <!-- TradingView Widget BEGIN -->
+    <div class="tv-widget-container">
+        <div class="show-widget">
+            <input type="checkbox" name="widget" id="trigger" checked>
+            <label for="trigger">Click to track all market on Trading view <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-right-short" viewBox="0 0 16 16">
+                <path fill-rule="evenodd" d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8"/>
+              </svg></label>
+
+                <a href="https://www.tradingview.com/" rel="noopener nofollow" target="_blank"><span class="blue-text">Track all markets on TradingView</span></a>
+                <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-advanced-chart.js" async>
+                    {
+                    "autosize": true,
+                    "symbol": "NASDAQ:AAPL",
+                    "interval": "D",
+                    "timezone": "Etc/UTC",
+                    "theme": "dark",
+                    "style": "1",
+                    "locale": "en",
+                    "withdateranges": true,
+                    "hide_side_toolbar": false,
+                    "allow_symbol_change": true,
+                    "calendar": false,
+                    "support_host": "https://www.tradingview.com"
+                    }
+                </script>
+
+        </div>          
+        
+    </div>
+    <!-- TradingView Widget END -->
         
     <footer>
         &copy; 2024 CryptoPulse. All rights reserved.
