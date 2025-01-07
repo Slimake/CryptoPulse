@@ -305,7 +305,19 @@ table img {
     text-decoration-color: #fca311;
 }
 
+footer {
+    text-align: center;
+    background-color: #000000;
+    color: #fff;
+    padding: 1rem;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    margin-top: 20px;
+}
 
+
+
+/* Trading View Widget */
  label{
     font-size: 20px;
     background-color: rgb(224, 231, 120);
@@ -364,11 +376,7 @@ table img {
     opacity: 0;
  }
 
-footer {
-    text-align: center;
-    background-color: #000000;
-    color: #fff;
-    padding: 1rem;
-    font-family: Arial, Helvetica, sans-serif;
-    font-weight: bold;
-}
+ .blue-text {
+    color: #030303;
+    text-decoration: none;
+ }
