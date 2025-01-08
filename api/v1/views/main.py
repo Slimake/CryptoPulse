@@ -23,6 +23,12 @@ def market():
     cache_id = uuid4() # generate random uuid
     return render_template('market.html', cache_id=cache_id)
 
+@app_views_main.route('/chart')
+def chart():
+    """Chart"""
+    cache_id = uuid4() # generate random uuid
+    return render_template('chart.html', cache_id=cache_id)
+
 @app_views_main.route('/news')
 def news():
     """News"""
