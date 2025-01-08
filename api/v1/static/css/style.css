@@ -312,4 +312,71 @@ footer {
     padding: 1rem;
     font-family: Arial, Helvetica, sans-serif;
     font-weight: bold;
+    margin-top: 20px;
 }
+
+
+
+/* Trading View Widget */
+ label{
+    font-size: 20px;
+    background-color: rgb(224, 231, 120);
+    display: block;
+    cursor: pointer;
+    padding: 10px 10px 10px 30px;
+    position: relative;
+    user-select: none;
+ }
+
+ label:before {
+    content: " ";
+    border-width: 10px;
+    border-style: solid;
+    border-color: transparent 
+                transparent transparent black ;
+    height: 0;
+    font-size: 0;
+    position: absolute;
+    top: 15px;
+    left: 10px;
+    transition: transform 0.5;
+    transform-origin: 3px center;
+ }
+
+ .show-widget {
+    height: 800px;
+    transition: max-height 0.4s ease, opacity 0.4s ease;
+    border-radius: 8px;
+    box-shadow: 6px 6px 10px -1px rgba(0,0,0,0.4),
+                -6px -6px 10px -1px rgba(255, 255, 255, 0.7);
+
+ }
+
+ input {
+    display: none;
+ }
+
+ input:checked ~ label::before {
+    transform: rotate(90deg);
+ }
+
+ input:checked ~ label:before {
+    transform: rotate(90deg);
+ }
+
+ input:checked ~ div {
+    padding: 10px;
+    opacity: 1;
+    height: auto;
+ }
+
+ .show-widget div {
+    font-size: 26px;
+    overflow: hidden;
+    opacity: 0;
+ }
+
+ .blue-text {
+    color: #030303;
+    text-decoration: none;
+ }
