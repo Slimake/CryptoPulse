@@ -90,3 +90,15 @@ class FileStorage:
             if (value.email == email):
                 return value
         return None
+
+    def get_id(self, cls, id):
+        """Returns the object based on the class name and its ID
+        or None if not found"""
+        if cls not in classes.values():
+            return None
+
+        all_cls = self.all(cls)
+        for value in all_cls.values():
+            if (value.id == id):
+                return value
+        return None
