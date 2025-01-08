@@ -18,6 +18,7 @@
                 <li><a href="{{ url_for('app_views_main.index') }}">Home</a></li>
                 {% if current_user.is_authenticated %}
                 <li><a href="{{ url_for('app_views_main.market') }}" onclick="return false" class="active">Market</a></li>
+                <li><a href="{{ url_for('app_views_main.chart') }}">Chart</a></li>
                 <li><a href="{{ url_for('app_views_main.news') }}">News</a></li>
                 <li><a href="{{ url_for('app_views_main.prediction') }}">Prediction</a></li>
                 {% endif %}
@@ -58,7 +59,7 @@
     </div>
         
     <footer>
-        &copy; 2024 CryptoPulse. All rights reserved.
+        &copy; 2025 CryptoPulse. All rights reserved.
     </footer>
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>

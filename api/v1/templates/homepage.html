@@ -22,6 +22,7 @@
                 <li><a href="{{ url_for('app_views_main.index') }}" onclick="return false" class="active">Home</a></li>
                 {% if current_user.is_authenticated %}
                 <li><a href="{{ url_for('app_views_main.market') }}">Market</a></li>
+                <li><a href="{{ url_for('app_views_main.chart') }}">Chart</a></li>
                 <li><a href="{{ url_for('app_views_main.news') }}">News</a></li>
                 <li><a href="{{ url_for('app_views_main.prediction') }}">Prediction</a></li>
                 {% endif %}
@@ -129,10 +130,10 @@
                 <div class="feature-icon d-inline-flex align-items-center justify-content-center text-bg-primary bg-gradient fs-2 mb-3">
                 <svg class="bi" width="1em" height="1em" style="background-color: #fca311;"><use xlink:href="#toggles2"></use></svg>
                 </div>
-                <h3 class="fs-2 text-body-emphasis">Forecast</h3>
-                <p>CryptoPulse allows users to make their own forecasts on the future prices of various cryptocurrencies with other users.</p>
-                <a href="{{ url_for('app_views_main.prediction') }}" class="icon-link">
-                Prediction
+                <h3 class="fs-2 text-body-emphasis">Chart</h3>
+                <p>CryptoPulse allows users to make their own analysis on various cryptocurrencies by using the chart section.</p>
+                <a href="{{ url_for('app_views_main.chart') }}" class="icon-link">
+                Chart
                 <svg class="bi"><use xlink:href="#chevron-right"></use></svg>
                 </a>
             </div>
@@ -141,7 +142,7 @@
     </div>
 
     <footer>
-        &copy; 2024 CryptoPulse. All rights reserved.
+        &copy; 2025 CryptoPulse. All rights reserved.
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>

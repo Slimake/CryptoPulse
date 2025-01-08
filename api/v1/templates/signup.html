@@ -79,6 +79,7 @@
                 <li><a href="{{ url_for('app_views_main.index') }}">Home</a></li>
                 {% if current_user.is_authenticated %}
                 <li><a href="{{ url_for('app_views_main.market') }}">Market</a></li>
+                <li><a href="{{ url_for('app_views_main.chart') }}">Chart</a></li>
                 <li><a href="{{ url_for('app_views_main.news') }}">News</a></li>
                 <li><a href="{{ url_for('app_views_main.prediction') }}">Prediction</a></li>
                 {% endif %}
@@ -117,7 +118,7 @@
         <p>Already have an account? <a href="{{ url_for('app_views_auth.login') }}">Log in here</a></p>
     </div>
     <footer>
-        &copy; 2024 CryptoPulse. All rights reserved.
+        &copy; 2025 CryptoPulse. All rights reserved.
     </footer>
 </body>
 </html>

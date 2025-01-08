@@ -25,8 +25,10 @@
             <ul class="nav-links">
                 <li><a href="{{ url_for('app_views_main.index') }}">Home</a></li>
                 {% if current_user.is_authenticated %}
-                <li><a href="#">Market</a></li>
-                <li><a href="#">News</a></li>
+                <li><a href="{{ url_for('app_views_main.market') }}">Market</a></li>
+                <li><a href="{{ url_for('app_views_main.chart') }}">Chart</a></li>
+                <li><a href="{{ url_for('app_views_main.news') }}">News</a></li>
+                <li><a href="{{ url_for('app_views_main.prediction') }}">Prediction</a></li>
                 {% endif %}
                 <li><a href="#">About</a></li>
                 <li><a href="#">Contact</a></li>
@@ -42,7 +44,7 @@
     </div>
 
     <footer style="margin-top: 190px">
-        &copy; 2024 CryptoPulse. All rights reserved.
+        &copy; 2025 CryptoPulse. All rights reserved.
     </footer>
 </body>
 </html>
