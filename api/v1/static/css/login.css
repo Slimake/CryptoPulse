@@ -18,6 +18,7 @@ body {
     flex-direction: column;
     justify-content: space-between;
 }
+
 .cryptopulse {
     width: 50px;
     padding: 0;
@@ -151,9 +152,11 @@ body {
     cursor: pointer;
     font-weight: bold;
 }
+
 .login-container input[type="submit"]:hover {
     background-color: #45a049;
 }
+
 .login-container p {
     text-align: center;
     margin-top: 20px;

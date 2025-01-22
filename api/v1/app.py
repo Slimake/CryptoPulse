@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-""" Flask Application """
+""" CryptoPulse Flask Application """
 from models import storage
 from models.user import User
 from api.v1.views import app_views_auth
@@ -21,7 +21,7 @@ login_manager.init_app(app)
 
 @login_manager.user_loader
 def load_user(id):
-    # since the id is just the primary key of our user table, use it in the query for the user
+    # Since the id is just the primary key of our user table, use it in the query for the user
     return storage.get_id(User, id)
 
 @app.teardown_appcontext
