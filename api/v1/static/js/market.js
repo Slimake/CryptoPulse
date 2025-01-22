@@ -1,5 +1,5 @@
 $(document).ready(function () {
-    // Run updateData every 5 seconds
+    // Run updateData module every 5 seconds
     setInterval(updateData, 5000);
     updateData();
 });
