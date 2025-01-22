@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
-Contains the class DBStorage
+Contains the User class in DBStorage
 """
 
 import models
@@ -10,7 +10,7 @@ from flask_login import UserMixin
 
 
 class User(UserMixin, BaseModel, Base):
-    """Create user table in the database"""
+    """Create the user table in the database"""
     if models.storage_type == "db":
         __tablename__ = 'users'
         username = Column(String(45), nullable=False)
