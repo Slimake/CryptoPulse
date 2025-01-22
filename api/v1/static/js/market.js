@@ -11,6 +11,7 @@ function updateData() {
         "method": "GET",
         "data": {limit: 100},
         "Accept-Encoding": "gzip",
+
         "timeout": 0,
     };
 
