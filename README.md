@@ -6,8 +6,6 @@
 
 ## Stay in Sync with the Heartbeat of the Crypto Market
 
-
-
 ## Authors
 
 - [Sunday Ajakaiye](https://github.com/Slimake)
