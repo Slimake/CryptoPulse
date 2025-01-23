@@ -1,5 +1,5 @@
 $(document).ready(function () {
-    // Run updateData every 5 seconds
+    // Run updateData module every 5 seconds
     setInterval(updateData, 5000);
     updateData();
 });
@@ -19,7 +19,7 @@ function updateData() {
     let previousData = {};
     
     $.ajax(settings).done(function (response) {
-        // Loop through the response.data array
+        // Loop through response.data array
         response.data.forEach((coinData, i) => {
             const symbol = coinData.symbol;
 
