@@ -26,7 +26,7 @@ def load_user(id):
 
 @app.teardown_appcontext
 def close_db(error):
-    """Close DBStorage or called the reload method of fileStorage"""
+    """Close DBStorage or called reload method of fileStorage"""
     storage.close()
 
 @app.errorhandler(404)
